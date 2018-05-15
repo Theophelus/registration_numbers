@@ -1,8 +1,11 @@
 //Application logic for Registration NUMBER
-var registration = function(){
+var registration = function(initialValue){
   //Declare three variables map, registrationNUmber,
   var registrationMap = {};
   var registrationNumber = '';
+  if(initialValue){
+    registrationMap = initialValue;
+  }
   //Create a function to map all the registration numbers
     var setMap = function(numbers){
       if(numbers !==''){
@@ -10,10 +13,6 @@ var registration = function(){
           //Check if the map is empty, if empty and REGISTRATION NUMBER
           if(registrationMap[registrationNumber] === undefined){
             registrationMap[registrationNumber] = 0;
-            for(var i=0; i < registrationMap.length; i++){
-              registrationNumber = registrationMap[i];
-            }
-            return registrationNumber;
           }
         }
     }

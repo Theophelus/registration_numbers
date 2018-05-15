@@ -27,3 +27,14 @@
 .registration {
   margin-left: 10%;
 }
+.display {
+  box-sizing: border-box;
+}
+.display li {
+  /* border: 2px solid black;
+  border-radius: 5px; */
+  /* box-sizing: border-box;
+  background-color: yellow; */
+  list-style: none;
+  /* color: white; */
+}

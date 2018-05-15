@@ -2,6 +2,7 @@
 var add = document.querySelector('.add');
 var inputElement = document.querySelector('.inputTxt');
 var display = document.querySelector('.display');
+var initialValue =JSON.parse(localStorage.getItem('storedRegistation'));
 //Declare object instance of registration
  var newRegistration = registration();
 
@@ -16,4 +17,6 @@ var display = document.querySelector('.display');
    addNemElement();
   console.log(newRegistration.map());
 
+  //Add values inside the map into thw local storage
+  localStorage.setItem('storedRegistation',JSON.stringify(newRegistration.map()))
  });
