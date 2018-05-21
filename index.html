@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
@@ -15,7 +14,7 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -44,21 +43,22 @@
               </div>
         </div>
      </div>
+     <!-- <select id="activitySelector">
+      <option value="addNew">Add New Item</option>
+</select> -->
      <div class="dropDown">
-       <select id="mySelect">
-        <option>Cape Town</option>
-        <option>Paarl</option>
-        <option>George</option>
-        <option>Stellenbosch</option>
-
-
+       <select class="towns">
+        <option value="allTown" class="allTown">Select All Towns</option>
+        <option value="ca" name="towns" class="towns">Cape Town</option>
+        <option value="cj" name="towns" class="towns">Paarl</option>
+        <option value="caw" name="towns" class="towns">George</option>
+        <option value="cl"name="towns" class="towns">Stellenbosch</option>
       </select>
-
      </div>
      <br>
-    <div class="display">
-      <ul>
-        
+    <div>
+      <ul class="display">
+        <br>
       </ul>
     </div>
 
