@@ -57,12 +57,15 @@ var registration = function(initialValue){
     var getMap = function(){
       return Object.keys(registrationMap);
     }
+    var resetData = function (){
+    return registrationMap = {}
+  }
     console.log(getMap());
     return{
       setMap,
       getMap,
       getReg,
-      //validation,
+      resetData,
       map
     }
 }

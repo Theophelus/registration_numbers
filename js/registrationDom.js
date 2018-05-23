@@ -5,6 +5,7 @@ var display = document.querySelector('.display');
 var initialValue =JSON.parse(localStorage.getItem('storedRegistation'));
 var towns = document.querySelector('.towns');
 var message = document.querySelector('.message');
+var reset = document.querySelector('.reset');
 //Declare object instance of registration
  var newRegistration = registration(initialValue);
  var createRegistrations = function(list){
@@ -18,33 +19,30 @@ var message = document.querySelector('.message');
 var clearBefore = function() {
     display.innerHTML = '';
 }
-var duplicates = function(duplicate){
-  if(duplicate !== undefined){
-    createRegistrations(duplicate);
-    display.innerHTML = '';
-  }
-}
-var regularEx = function(){
 
-}
 var addingElements = function() {
     message.innerHTML = '';
-    var registrationNumber = inputElement.value.toUpperCase();
+    var registrationNumber = inputElement.value.trim().toUpperCase();
     var regex = /^[a-zA-Z]{2,3}(\s)[0-9]{3}(\-)[0-9]{3}$/;
     if (registrationNumber =='' || registrationNumber ==null) {
-            message.innerHTML = 'enter registration number';
+            message.innerHTML = 'Please Enter Registration Number';
             return false;
-    }else if(registrationNumber.match(regex)){
-      var whatEver = newRegistration.setMap(registrationNumber);
+    }
+    if(registrationNumber.match(regex)){
+      var plateRegistration = newRegistration.setMap(registrationNumber);
       localStorage.setItem('storedRegistation', JSON.stringify(newRegistration.map()));
-      if(whatEver !== undefined){
-        createRegistrations(whatEver);
-      }
     }
     else {
       message.innerHTML = 'Please enter the the correct registration number eg: CA 123-456';
       return false;
     }
+      if(plateRegistration !== undefined){
+        createRegistrations(plateRegistration);
+      }
+      else {
+        message.innerHTML = 'Registration Number already exists..!';
+        return false;
+      }
 }
  add.addEventListener('click', function(){
    addingElements();
@@ -60,6 +58,7 @@ var addingElements = function() {
         }
  }
  towns.addEventListener('change', function() {
+   message.innerHTML = '';
    clearBefore();
    selectedTown();
  });
@@ -69,3 +68,8 @@ var addingElements = function() {
         createRegistrations(arr[i]);
     }
 })
+reset.addEventListener('click', function(){
+  localStorage.clear();
+  newRegistration.resetData();
+  location.reload();
+});
