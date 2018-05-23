@@ -10,15 +10,22 @@ var registration = function(initialValue){
     var setMap = function(numbers){
       if(numbers !==''){
         registrationNumber = numbers;
+        var regList = ['CA', 'CJ', 'CAW', 'CL'];
         //Check if the map is empty, if empty and REGISTRATION NUMBER
         if(registrationMap[registrationNumber]=== undefined){
-          registrationMap[registrationNumber] = 0;
-          for(let key in registrationMap){
-            var reg = key;
+          for(var i=0; i< regList.length; i++){
+            if(registrationNumber.startsWith(regList[i])){
+              registrationMap[registrationNumber] = 0;
+              for(let key in registrationMap){
+                var reg = key;
+              }
+              return reg;
+            }
           }
+
       }
       }
-      return reg;
+      //return false;
     }
     /*
     // TODO: create a function call filter that must take in parameters called town.

@@ -18,25 +18,32 @@ var message = document.querySelector('.message');
 var clearBefore = function() {
     display.innerHTML = '';
 }
-var validation = function(){
-  //var regex = /^[a-zA-Z0-9 ]+$/;
-  if(registrationNumber.match(regex)){
-    add
-  }else{
-    invslid
+var duplicates = function(duplicate){
+  if(duplicate !== undefined){
+    createRegistrations(duplicate);
+    display.innerHTML = '';
   }
+}
+var regularEx = function(){
+
 }
 var addingElements = function() {
     message.innerHTML = '';
     var registrationNumber = inputElement.value.toUpperCase();
-    var regex = /^[A-Z]{2,3}(\s)[0-9]{3}(\-)[0-9]{3}$/;
-    if(registrationNumber.match(regex)){
-      newRegistration.setMap(registrationNumber);
-      localStorage.setItem('storedRegistation', JSON.stringify(newRegistration.map()));
-      createRegistrations(registrationNumber);
-    }else if (registrationNumber =='' || registrationNumber ==null) {
+    var regex = /^[a-zA-Z]{2,3}(\s)[0-9]{3}(\-)[0-9]{3}$/;
+    if (registrationNumber =='' || registrationNumber ==null) {
             message.innerHTML = 'enter registration number';
             return false;
+    }else if(registrationNumber.match(regex)){
+      var whatEver = newRegistration.setMap(registrationNumber);
+      localStorage.setItem('storedRegistation', JSON.stringify(newRegistration.map()));
+      if(whatEver !== undefined){
+        createRegistrations(whatEver);
+      }
+    }
+    else {
+      message.innerHTML = 'Please enter the the correct registration number eg: CA 123-456';
+      return false;
     }
 }
  add.addEventListener('click', function(){
