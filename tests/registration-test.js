@@ -20,4 +20,9 @@ describe('registration number widget', function(){
     newRegistration.setMap('CL 689-462');
     assert.deepEqual(newRegistration.map(), { 'CA 123-345': 0, 'CJ 567-787': 0, 'CAW 983-785':0, 'CL 689-462': 0});
   });
+  it('should be able to check all registration numbers inside the map', function(){
+    var newRegistration = registration();
+    newRegistration.setMap('Cape Town');
+    assert.deepEqual(newRegistration.getMap(),'CA');
+});
 });

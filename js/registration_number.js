@@ -14,7 +14,7 @@ var registration = function(initialValue){
         if(registrationMap[registrationNumber]=== undefined){
           registrationMap[registrationNumber] = 0;
           for(let key in registrationMap){
-            reg = key;
+            var reg = key;
           }
       }
       }
@@ -26,13 +26,12 @@ var registration = function(initialValue){
     // TODO: add conditions to check for all getTowns
     // TODO: loop through the list and check,
     */
-    var getReg = function(checkAllTowns, town) {
+    var getReg = function(registrations, town) {
       var storedRegistration = [];
-      var registrations = getMap();
-      // if(town === 'allTown'){
-      //   return registrations;
-      //   console.log(registrations);
-      // }
+      if(town === 'allTown'){
+        return registrations;
+        console.log(registrations);
+      }
         for(var i=0; i< registrations.length; i++){
           listReg = registrations[i];
           if(listReg.startsWith(town)){
@@ -47,17 +46,16 @@ var registration = function(initialValue){
       return registrationMap;
     }
     console.log(registrationMap);
-    //Create a function to get all the registrations in the reg
+
     var getMap = function(){
       return Object.keys(registrationMap);
     }
     console.log(getMap());
-
-    //console.log(map);
     return{
       setMap,
       getMap,
       getReg,
+      //validation,
       map
     }
 }
