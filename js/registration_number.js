@@ -10,7 +10,7 @@ var registration = function(initialValue){
     var setMap = function(numbers){
       if(numbers !==''){
         registrationNumber = numbers;
-        var regList = ['CA', 'CJ', 'CAW', 'CL'];
+        var regList = ['CA', 'CJ', 'CW', 'CL'];
         //Check if the map is empty, if empty and REGISTRATION NUMBER
         if(registrationMap[registrationNumber]=== undefined){
           for(var i=0; i< regList.length; i++){

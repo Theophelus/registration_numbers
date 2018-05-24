@@ -38,9 +38,10 @@ var addingElements = function() {
     }
       if(plateRegistration !== undefined){
         createRegistrations(plateRegistration);
-      }
+        return false;
+        }
       else {
-        message.innerHTML = 'Registration Number Already Exists..!';
+        message.innerHTML = 'Registration Number should starts with: CA, CL, CJ and CW Or Registration Number Already Exists..!';
         return false;
       }
 }
