@@ -33,14 +33,14 @@ var addingElements = function() {
       localStorage.setItem('storedRegistation', JSON.stringify(newRegistration.map()));
     }
     else {
-      message.innerHTML = 'Please enter the the correct registration number eg: CA 123-456';
+      message.innerHTML = 'Please Enter The Correct Registration Number Format eg: CA 123-456';
       return false;
     }
       if(plateRegistration !== undefined){
         createRegistrations(plateRegistration);
       }
       else {
-        message.innerHTML = 'Registration Number already exists..!';
+        message.innerHTML = 'Registration Number Already Exists..!';
         return false;
       }
 }

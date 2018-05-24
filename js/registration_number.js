@@ -40,7 +40,7 @@ var registration = function(initialValue){
         console.log(registrations);
       }
         for(var i=0; i< registrations.length; i++){
-          listReg = registrations[i];
+          var listReg = registrations[i];
           if(listReg.startsWith(town)){
             storedRegistration.push(listReg);
           }
