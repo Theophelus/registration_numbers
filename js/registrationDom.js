@@ -41,7 +41,7 @@ var addingElements = function() {
         return false;
         }
       else {
-        message.innerHTML = 'Registration Number should starts with: CA, CL, CJ and CW Or Registration Number Already Exists..!';
+        message.innerHTML = 'Registration Number should starts with: CA, CL, CJ and CAW Or Registration Number Already Exists..!';
         return false;
       }
 }
