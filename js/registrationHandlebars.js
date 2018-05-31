@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function(){
   var reset2 = document.querySelector('.reset2');
   //Declare object instance of registration
    var newRegistration2 = registration(initialValue2);
-   var clear = function() {
+   var clear2 = function() {
       inputElement2.value = '';
   }
-  var clearBefore = function() {
+  var clearBefore2 = function() {
       display2.innerHTML = '';
   }
   var addingElements = function() {
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function(){
   }
    add2.addEventListener('click', function(){
      addingElements();
-     clear();
+     clear2();
    });
    var selectedTown = function(){
-     var getTowns2 = towns.value;
+     var getTowns2 = towns2.value;
      var selectedReg = newRegistration2.getMap();
 
      var displayData = template({
-       list: newRegistration2.getReg(selectedReg, getTowns),
+       list: newRegistration2.getReg(selectedReg, getTowns2),
      });
       display2.innerHTML = displayData;
    }

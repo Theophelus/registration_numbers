@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function(){
       }
         if(plateRegistration !== undefined){
           createRegistrations(plateRegistration);
-          return false;
           }
         else {
           message.innerHTML = 'Registration Number should starts with: CA, CL, CJ and CAW Or Registration Number Already Exists..!';
